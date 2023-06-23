@@ -1,6 +1,7 @@
 const connection = require("../../config/dbconnection");
 
 const rateAppointment = (req, res) => {
+  console.log("------", req.body, req.params.appointmentId)
   try {
     const appointmentId = req.params.appointmentId;
     const { value, doctorId } = req.body;
@@ -22,7 +23,7 @@ const rateAppointment = (req, res) => {
         if (error) {
           res.status(500).json({ error: "Error updating appointments rating" });
         } else {
-          const query2 = `UPDATE doctor SET rating=rating+${value} ,rating_count = rating_count +1 WHERE id = ?`;
+          const query2 = `UPDATE doctor SET rating=rating+${value} ,rating_count = rating_count+1 WHERE id = ?`;
           connection.query(query2, [doctorId], (err, result) => {
             if (err) {
               throw err;

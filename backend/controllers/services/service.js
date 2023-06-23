@@ -38,7 +38,6 @@ const addService = async (req, res) => {
 
 const updateService = async (req, res) => {
   const { id, title, description, price } = req.body;
-
   try {
     const query = `UPDATE service SET title = ?, description = ?, price = ?  WHERE id = ?`;
     connection.query(

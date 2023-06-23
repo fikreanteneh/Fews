@@ -2,10 +2,10 @@ const mysql = require("mysql2");
 require("dotenv").config();
 
 const dbConfig = {
-  host: process.env.HOST,
-  user: process.env.USER,
-  password: process.env.PASSWORD,
-  database: process.env.DB_NAME,
+  host: "localhost",
+  user: "root",
+  password: "",
+  database: "trad-doctors",
   connectionLimit: 10,
 };
 

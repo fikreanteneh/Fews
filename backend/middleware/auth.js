@@ -3,6 +3,7 @@ const jwt = require("jsonwebtoken");
 const authorized = async (req, res, next) => {
   try {
     const token = req.header("auth-token");
+    console.log(req.body, req.url)
     console.log(`================= ${token} ==================`);
 
     if (!token)

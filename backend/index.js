@@ -30,7 +30,6 @@ app.use("/uploads", express.static("uploads"));
 
 //! Routes
 app.use("/auth", authRouter);
-
 app.use(authorized);
 app.use("/user", userRouter);
 app.use("/appointment", appointmentRouter);

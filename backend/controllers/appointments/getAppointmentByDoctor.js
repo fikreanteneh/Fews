@@ -13,7 +13,6 @@ const getAppointmentsByDoctor = (req, res) => {
     } else {
       let n = results.length;
       let counter = 0;
-
       for (let i = 0; i < n; i++) {
         let patient_id = results[i]["patient_id"];
         let newQuery = "SELECT * FROM patient WHERE id = ?";
@@ -27,10 +26,11 @@ const getAppointmentsByDoctor = (req, res) => {
             results[i]["phoneNumber"] = row[0]["phoneNumber"];
             results[i]["profilePicture"] = row[0]["profilePicture"];
             results[i]["address"] = row[0]["address"];
-
             counter++;
             if (counter === n) {
+              console.log("-------", results)
               res.status(200).send(results);
+              return
             }
           }
         });

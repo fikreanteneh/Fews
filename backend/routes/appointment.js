@@ -14,8 +14,7 @@ appointmentRouter.post("/createappointment", createAppointment);
 
 appointmentRouter.get("/patient/:patientId", getAppointmentsByPatient);
 
-appointmentRouter.get(
-  "/doctor/:doctorId",
+appointmentRouter.get("/doctor/:doctorId",
   getAppointmentsByDoctor
 );
 
